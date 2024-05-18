@@ -1,8 +1,7 @@
 #include <Arduino.h>
 #include "OneButton.h"
 #include <Servo.h>
-#include "ConfiM1.h"
-#include "ConfiM2.h"
+#include "Leds.h"
 
 // D11, D10, D9, D6 Para los Servos
 // D5, D4, D3, D2 Para los Botones
@@ -21,10 +20,19 @@ Servo Base;
 Servo Alcance;
 Servo Altura;
 Servo Pinza;
+// Tiempo para las multi tarea
+unsigned long tiempo1, tiempo2;
+unsigned long tiempotranscurrido = 0;
+unsigned long tiempotranscurrido2 = 0;
 
 void setup()
 {
   Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LedM1, OUTPUT);
+  pinMode(LedM2, OUTPUT);
+  pinMode(LedM3, OUTPUT);
+  pinMode(LedM4, OUTPUT);
 
   // Inicializar Servos
   Base.attach(11);
@@ -53,8 +61,17 @@ void setup()
 
 void loop()
 {
-  UpM1.tick();
-  DownM1.tick();
-  UpM2.tick();
-  DownM2.tick();
+
+    tiempo1 = millis();
+  if (tiempo1 - tiempotranscurrido >= 0)
+  {
+    tiempotranscurrido = tiempo1;
+    UpM1.tick();
+    DownM1.tick();
+    UpM2.tick();
+    DownM2.tick();
+    
+  }
+  LedOnMo1();
+  LedOnMo2();
 }

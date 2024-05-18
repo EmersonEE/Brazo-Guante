@@ -1,4 +1,4 @@
-#define LedM2 A2
+
 // Posicion inicial
 int movm2 = 0;
 // Posicion Final
@@ -28,7 +28,7 @@ void UpLongMo2()
     movm2 += 5;
     if (movm2 > 180)
         movm2 = 180;
-    delay(250);
+    delay(200);
     CompUpMo2();
 }
 void DownMo2()
@@ -45,5 +45,5 @@ void DownLongMo2()
     if (movm2 < 0)
         movm2 = 0;
     CompDownMo2();
-    delay(250);
+    delay(200);
 }
