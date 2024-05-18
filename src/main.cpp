@@ -25,22 +25,27 @@ Servo Pinza;
 void setup()
 {
   Serial.begin(115200);
+
+  // Inicializar Servos
   Base.attach(11);
   Alcance.attach(10);
   Altura.attach(9);
   Pinza.attach(6);
-  // Bajar y Subir el Motor 1
+
+  // Subir el Motor 1
   UpM1.attachClick(UpMo1);
   UpM1.attachDoubleClick(UpMo1);
   UpM1.attachDuringLongPress(UpLongMo1);
+  // Bajar el Motor 1
   DownM1.attachClick(DownMo1);
   DownM1.attachDoubleClick(DownMo1);
   DownM1.attachDuringLongPress(DownLongMo1);
 
-  // Bajar y Subir el Motor 2
+  // Subir el Motor 2
   UpM2.attachClick(UpMo2);
   UpM2.attachDoubleClick(UpMo2);
   UpM2.attachDuringLongPress(UpLongMo2);
+  // Bajar el Motor 2
   DownM2.attachClick(DownMo2);
   DownM2.attachDoubleClick(DownMo2);
   DownM2.attachDuringLongPress(DownLongMo2);
