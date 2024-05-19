@@ -9,12 +9,12 @@
 // A1 a A5 para leds
 
 // Motor Alcance
-OneButton UpM1(5, true);
-OneButton DownM1(4, true);
+OneButton UpM1(A2, true);
+OneButton DownM1(A3, true);
 
 // Motor Altura
-OneButton UpM2(3, true);
-OneButton DownM2(2, true);
+OneButton UpM2(A4, true);
+OneButton DownM2(A5, true);
 
 Servo Pinza;
 // Tiempo para las multi tarea
