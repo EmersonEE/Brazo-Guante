@@ -16,9 +16,6 @@ OneButton DownM1(4, true);
 OneButton UpM2(3, true);
 OneButton DownM2(2, true);
 
-Servo Base;
-Servo Alcance;
-Servo Altura;
 Servo Pinza;
 // Tiempo para las multi tarea
 unsigned long tiempo1, tiempo2;
@@ -62,16 +59,17 @@ void setup()
 void loop()
 {
 
-    tiempo1 = millis();
-  if (tiempo1 - tiempotranscurrido >= 0)
+  tiempo1 = millis();
+  if (tiempo1 - tiempotranscurrido >= 10)
   {
     tiempotranscurrido = tiempo1;
     UpM1.tick();
     DownM1.tick();
     UpM2.tick();
     DownM2.tick();
-    
+    MovBase();
   }
   LedOnMo1();
   LedOnMo2();
+  LedOnMo3();
 }
