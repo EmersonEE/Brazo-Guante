@@ -2,6 +2,7 @@
 #include "ConfiMB.h"
 #include "ConfiM1.h"
 #include "ConfiM2.h"
+#include "ConfiPi.h"
 
 #define LedM1 5
 #define LedM2 4
@@ -52,4 +53,19 @@ void LedOnMo3()
         digitalWrite(LedM3, LOW);
     }
     movm3Prev = Val;
+}
+
+// Led Para la Pinza
+void LedOnMo4()
+{
+    if (angle != movm4Prev)
+    {
+        digitalWrite(LedM4, HIGH);
+        delay(50);
+    }
+    else
+    {
+        digitalWrite(LedM4, LOW);
+    }
+    movm4Prev = angle;
 }
