@@ -38,13 +38,13 @@ void setup()
   Pinza.attach(6);
 
   // Subir el Motor 1
-  UpM1.attachClick(UpMo1);
-  UpM1.attachDoubleClick(UpMo1);
-  UpM1.attachDuringLongPress(UpLongMo1);
+  UpM1.attachClick(DownMo1);
+  UpM1.attachDoubleClick(DownMo1);
+  UpM1.attachDuringLongPress(DownLongMo1);
   // Bajar el Motor 1
-  DownM1.attachClick(DownMo1);
-  DownM1.attachDoubleClick(DownMo1);
-  DownM1.attachDuringLongPress(DownLongMo1);
+  DownM1.attachClick(UpMo1);
+  DownM1.attachDoubleClick(UpMo1);
+  DownM1.attachDuringLongPress(UpLongMo1);
 
   // Subir el Motor 2
   UpM2.attachClick(UpMo2);
@@ -68,8 +68,8 @@ void loop()
     UpM2.tick();
     DownM2.tick();
     MovBase();
-    SensorFlex();
-  }
+    // SensorFlex();
+}
   LedOnMo1();
   LedOnMo2();
   LedOnMo3();

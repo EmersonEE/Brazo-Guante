@@ -1,7 +1,7 @@
 #include <Servo.h>
 Servo Alcance;
 // Posicion inicial
-int movm1 = 0;
+int movm1 = 85;
 // Posicion Final
 
 void CompUpMo1()
@@ -37,8 +37,8 @@ void UpLongMo1()
 void DownMo1()
 {
     movm1 -= 5;
-    if (movm1 < 0)
-        movm1 = 0;
+    if (movm1 < 85)
+        movm1 = 85;
     CompDownMo1();
     Alcance.write(movm1);
 }
@@ -46,8 +46,8 @@ void DownMo1()
 void DownLongMo1()
 {
     movm1 -= 5;
-    if (movm1 < 0)
-        movm1 = 0;
+    if (movm1 < 85)
+        movm1 = 85;
     CompDownMo1();
     delay(200);
     Alcance.write(movm1);

@@ -15,6 +15,7 @@ Development environment specifics:
 Arduino 1.6.7
 ******************************************************************************/
 #include <Arduino.h>
+
 const int FLEX_PIN = A5; // Pin connected to voltage divider output
 float angle;
 // Measure the voltage at 5V and the actual resistance of your
@@ -33,13 +34,10 @@ void SensorFlex()
     int flexADC = analogRead(FLEX_PIN);
     float flexV = flexADC * VCC / 1023.0;
     float flexR = R_DIV * (VCC / flexV - 1.0);
-    Serial.println("Resistance: " + String(flexR) + " ohms");
+    // Serial.println("Resistance: " + String(flexR) + " ohms");
 
     // Use the calculated resistance to estimate the sensor's
     // bend angle:
     angle = map(flexR, STRAIGHT_RESISTANCE, BEND_RESISTANCE, 170, 180.0);
-    Serial.println("Bend: " + String(angle) + " degrees");
-    Serial.println();
 
-    delay(500);
 }
