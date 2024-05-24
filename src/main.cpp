@@ -16,7 +16,7 @@ OneButton DownM1(A1, true);
 OneButton UpM2(A2, true);
 OneButton DownM2(A3, true);
 
-Servo Pinza;
+
 // Tiempo para las multi tarea
 unsigned long tiempo1, tiempo2;
 unsigned long tiempotranscurrido = 0;
@@ -68,7 +68,7 @@ void loop()
     UpM2.tick();
     DownM2.tick();
     MovBase();
-    // SensorFlex();
+    SensorFlex();
 }
   LedOnMo1();
   LedOnMo2();

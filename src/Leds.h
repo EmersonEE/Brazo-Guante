@@ -49,6 +49,7 @@ void LedOnMo3()
     {
         digitalWrite(LedM3, HIGH);
         delay(50);
+        Serial.println("Angulo De La Basw: " + String(Val));
     }
     else
     {
@@ -60,14 +61,15 @@ void LedOnMo3()
 // Led Para la Pinza
 void LedOnMo4()
 {
-    if (angle != movm4Prev)
+    if (NewAngle != movm4Prev)
     {
         digitalWrite(LedM4, HIGH);
         delay(50);
+        Serial.println("Angulo De La Pinza: " + String(NewAngle));
     }
     else
     {
         digitalWrite(LedM4, LOW);
     }
-    movm4Prev = angle;
+    movm4Prev = NewAngle;
 }
